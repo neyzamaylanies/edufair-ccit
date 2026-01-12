@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCIT FTUI - World Class Tech Education</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(250, 204, 21, 0.5);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #fbbf24;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d97706;
+        }
+        
+        /* Hero Pattern */
+        .hero-bg {
+            background-color: #0f172a;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231e293b' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 selection:bg-yellow-400 selection:text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-slate-900/90 backdrop-blur-md shadow-2xl border-b border-slate-700" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold flex items-center gap-2 group">
+                <div class="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-lg flex items-center justify-center text-slate-900 shadow-lg group-hover:rotate-12 transition-transform">
+                    <i class="fa-solid fa-microchip"></i>
+                </div>
+                <span class="tracking-tight">CCIT <span class="text-yellow-400">FTUI</span></span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 font-medium text-sm tracking-wide">
+                <a href="#home" class="hover:text-yellow-400 transition relative group">Home<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 transition-all group-hover:w-full"></span></a>
+                <a href="#about" class="hover:text-yellow-400 transition relative group">Excellence<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 transition-all group-hover:w-full"></span></a>
+                <a href="#programs" class="hover:text-yellow-400 transition relative group">Academic Tracks<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 transition-all group-hover:w-full"></span></a>
+                <a href="#admission" class="hover:text-yellow-400 transition relative group">Admission<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 transition-all group-hover:w-full"></span></a>
+                <a href="#fees" class="hover:text-yellow-400 transition relative group">Investment<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 transition-all group-hover:w-full"></span></a>
+                <a href="#contact" class="hover:text-yellow-400 transition relative group text-yellow-400">Contact Us<span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 transition-all group-hover:w-full"></span></a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-yellow-400 focus:outline-none">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-700 absolute w-full left-0">
+            <a href="#home" class="block px-8 py-4 hover:bg-slate-800 hover:text-yellow-400 border-b border-slate-800">Home</a>
+            <a href="#about" class="block px-8 py-4 hover:bg-slate-800 hover:text-yellow-400 border-b border-slate-800">Excellence</a>
+            <a href="#programs" class="block px-8 py-4 hover:bg-slate-800 hover:text-yellow-400 border-b border-slate-800">Academic Tracks</a>
+            <a href="#admission" class="block px-8 py-4 hover:bg-slate-800 hover:text-yellow-400 border-b border-slate-800">Admission</a>
+            <a href="#fees" class="block px-8 py-4 hover:bg-slate-800 hover:text-yellow-400 border-b border-slate-800">Investment</a>
+            <a href="#contact" class="block px-8 py-4 hover:bg-slate-800 hover:text-yellow-400 text-yellow-400 font-bold">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center hero-bg text-white overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/50 via-slate-900/80 to-slate-900 z-10"></div>
+        
+        <!-- Animated Background Blur -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-yellow-500/20 rounded-full blur-[128px] animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-[128px] animate-pulse" style="animation-delay: 1s;"></div>
+
+        <div class="container mx-auto px-6 z-20 text-center relative">
+            <div class="mb-8 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 text-xs font-bold tracking-widest uppercase shadow-[0_0_15px_rgba(250,204,21,0.3)] backdrop-blur-sm" data-aos="fade-down" data-aos-delay="100">
+                <span class="w-2 h-2 bg-yellow-400 rounded-full animate-ping"></span>
+                The Future of Tech Education
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
+                Unlock Your Potential as<br>
+                <span id="typed-text" class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500 text-glow"></span>
+            </h1>
+            
+            <p class="text-slate-300 text-lg md:text-2xl mb-12 max-w-3xl mx-auto font-light leading-relaxed" data-aos="fade-up" data-aos-delay="300">
+                Akselerasi karir Anda di pusat teknologi paling prestisius di Indonesia. Sinergi sempurna antara <strong class="text-white">Akademik FTUI</strong> dan <strong class="text-white">Standar Industri Global</strong>.
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-6" data-aos="fade-up" data-aos-delay="500">
+                <a href="#admission" class="group relative px-8 py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 font-bold rounded-xl shadow-[0_10px_30px_rgba(234,179,8,0.4)] hover:shadow-[0_15px_40px_rgba(234,179,8,0.6)] transition-all transform hover:-translate-y-1 overflow-hidden">
+                    <span class="relative z-10 flex items-center gap-2">
+                        Start Your Journey <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </span>
+                    <div class="absolute inset-0 bg-white/20 group-hover:scale-105 transition-transform duration-500"></div>
+                </a>
+                <a href="#programs" class="px-8 py-4 border border-slate-600 bg-slate-800/50 backdrop-blur-md text-white font-semibold rounded-xl hover:bg-slate-800 hover:border-yellow-400/50 transition shadow-lg">
+                    Explore Programs
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Excellence Profile -->
+    <section id="about" class="py-24 bg-white relative">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="md:w-1/2 relative" data-aos="fade-right">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-yellow-400/20 rounded-full z-0"></div>
+                    <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-slate-900/10 rounded-full z-0"></div>
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Kampus UI Modern" class="relative z-10 rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition duration-700 w-full object-cover h-[500px]">
+                    
+                    <div class="absolute -bottom-10 -left-10 bg-slate-900 text-white p-6 rounded-xl shadow-xl z-20 hidden md:block max-w-xs" data-aos="fade-up" data-aos-delay="400">
+                        <p class="text-3xl font-bold text-yellow-400 mb-1">20+</p>
+                        <p class="text-sm font-medium text-slate-300">Tahun mencetak talenta IT yang memimpin industri.</p>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <span class="text-yellow-600 font-bold tracking-widest uppercase text-sm mb-2 block">Why Choose Us?</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 leading-tight">
+                        We Don't Just Teach.<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-slate-900">We Create Legacies.</span>
+                    </h2>
+                    
+                    <p class="text-slate-600 mb-6 text-lg leading-relaxed">
+                        CCIT FTUI bukan sekadar institusi pendidikan. Kami adalah <span class="font-bold text-slate-900">inkubator masa depan</span>. Lahir dari rahim Fakultas Teknik UI, kami mengintegrasikan ketajaman akademis dengan kelincahan praktis yang dituntut oleh raksasa teknologi dunia.
+                    </p>
+                    
+                    <div class="space-y-6 mt-8">
+                        <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-slate-50 transition border border-transparent hover:border-slate-100">
+                            <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center text-yellow-600 flex-shrink-0 text-xl">
+                                <i class="fa-solid fa-certificate"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-lg">Industry-Grade Certification</h4>
+                                <p class="text-slate-500 text-sm">Kurikulum yang diakui secara global, memastikan skill Anda relevan di Silicon Valley hingga Jakarta.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-slate-50 transition border border-transparent hover:border-slate-100">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 flex-shrink-0 text-xl">
+                                <i class="fa-solid fa-earth-americas"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-lg">Global Pathway</h4>
+                                <p class="text-slate-500 text-sm">Jembatan eksklusif menuju universitas top dunia melalui program Twinning/Dual Degree.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <!-- Background Decor -->
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-slate-800 to-transparent opacity-30"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+                <div data-aos="fade-right">
+                    <span class="text-yellow-400 font-bold tracking-widest uppercase text-sm">Academic Excellence</span>
+                    <h2 class="text-4xl md:text-5xl font-bold mt-2">World-Class Pathways</h2>
+                </div>
+                <div class="mt-6 md:mt-0 max-w-md text-slate-400 text-right md:text-right text-sm" data-aos="fade-left">
+                    Kurikulum kami dirancang adaptif terhadap disrupsi teknologi. Pilih jalur yang mendefinisikan masa depan Anda.
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Program 1 -->
+                <div class="group bg-slate-800 rounded-2xl p-1 overflow-hidden hover:shadow-[0_0_40px_rgba(250,204,21,0.15)] transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-slate-900 h-full rounded-xl p-8 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity transform group-hover:scale-110 duration-500">
+                            <i class="fa-solid fa-code text-9xl text-white"></i>
+                        </div>
+                        
+                        <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg flex items-center justify-center text-white text-2xl mb-8 shadow-lg">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold mb-4 group-hover:text-yellow-400 transition-colors">Professional Technopreneur</h3>
+                        <p class="text-slate-400 text-sm mb-8 leading-relaxed">
+                            Mencetak "Full-Stack Developer" dan "Network Engineer" yang tidak hanya jago coding, tapi siap memimpin tim teknis.
+                        </p>
+                        
+                        <div class="border-t border-slate-700 pt-6">
+                            <a href="#" class="text-sm font-bold text-white flex items-center gap-2 group-hover:gap-4 transition-all">
+                                Pelajari Kurikulum <i class="fa-solid fa-arrow-right text-yellow-400"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program 2 (Highlighted) -->
+                <div class="group bg-gradient-to-b from-yellow-400 to-yellow-600 rounded-2xl p-[2px] transform md:-translate-y-6 shadow-2xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-slate-800 h-full rounded-xl p-8 relative overflow-hidden">
+                        <div class="absolute top-4 right-4 bg-yellow-400 text-slate-900 text-xs font-bold px-3 py-1 rounded">MOST WANTED</div>
+                        
+                        <div class="w-14 h-14 bg-white rounded-lg flex items-center justify-center text-slate-900 text-2xl mb-8 shadow-lg">
+                            <i class="fa-solid fa-user-graduate"></i>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold mb-4 text-white">International Dual Degree</h3>
+                        <p class="text-slate-300 text-sm mb-8 leading-relaxed">
+                            Program premium <strong>2+1 atau 2+2</strong>. Raih gelar Sarjana dari universitas mitra luar negeri. Pengalaman global tanpa batas.
+                        </p>
+                        
+                        <div class="border-t border-slate-600 pt-6">
+                            <a href="#" class="text-sm font-bold text-yellow-400 flex items-center gap-2 group-hover:gap-4 transition-all">
+                                Lihat Universitas Mitra <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="group bg-slate-800 rounded-2xl p-1 overflow-hidden hover:shadow-[0_0_40px_rgba(250,204,21,0.15)] transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-slate-900 h-full rounded-xl p-8 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity transform group-hover:scale-110 duration-500">
+                            <i class="fa-solid fa-chart-pie text-9xl text-white"></i>
+                        </div>
+                        
+                        <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-700 rounded-lg flex items-center justify-center text-white text-2xl mb-8 shadow-lg">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold mb-4 group-hover:text-yellow-400 transition-colors">Data Science & AI</h3>
+                        <p class="text-slate-400 text-sm mb-8 leading-relaxed">
+                            Kuasai "The New Oil" di era digital. Fokus pada Big Data, Machine Learning, dan IoT Architecture yang futuristik.
+                        </p>
+                        
+                        <div class="border-t border-slate-700 pt-6">
+                            <a href="#" class="text-sm font-bold text-white flex items-center gap-2 group-hover:gap-4 transition-all">
+                                Pelajari Kurikulum <i class="fa-solid fa-arrow-right text-yellow-400"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Section -->
+    <section id="admission" class="py-24 bg-white overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-20 items-center">
+                
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <div class="inline-block px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold mb-4 tracking-wide uppercase">Admission Open 2024</div>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6">Begin Your Legacy.</h2>
+                    <p class="text-slate-600 mb-10 text-lg">
+                        Proses seleksi kami dirancang untuk menemukan <span class="text-slate-900 font-semibold">visioner teknologi</span> masa depan. Apakah itu Anda?
+                    </p>
+                    
+                    <div class="relative pl-8 border-l-2 border-slate-200 space-y-10">
+                        <!-- Timeline Item -->
+                        <div class="relative">
+                            <div class="absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-slate-900 border-4 border-white shadow"></div>
+                            <h4 class="text-xl font-bold text-slate-900">Online Registration</h4>
+                            <p class="text-slate-500 mt-2 text-sm">Akses portal penerimaan kami yang terintegrasi. Upload dokumen prestasi Anda.</p>
+                        </div>
+                        <!-- Timeline Item -->
+                        <div class="relative">
+                            <div class="absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-slate-900 border-4 border-white shadow"></div>
+                            <h4 class="text-xl font-bold text-slate-900">Entrance Examination</h4>
+                            <p class="text-slate-500 mt-2 text-sm">Buktikan kemampuan logika dan bahasa Inggris Anda melalui Computer Based Test (CBT).</p>
+                        </div>
+                        <!-- Timeline Item -->
+                        <div class="relative">
+                            <div class="absolute -left-[41px] top-0 w-6 h-6 rounded-full bg-yellow-400 border-4 border-white shadow animate-pulse"></div>
+                            <h4 class="text-xl font-bold text-slate-900">Final Acceptance</h4>
+                            <p class="text-slate-500 mt-2 text-sm">Selamat datang di keluarga besar Fakultas Teknik Universitas Indonesia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2 w-full" data-aos="zoom-in">
+                    <div class="relative bg-slate-900 rounded-3xl p-10 text-white shadow-2xl overflow-hidden">
+                        <!-- Decorative Circles -->
+                        <div class="absolute -top-20 -right-20 w-64 h-64 bg-yellow-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+                        <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+
+                        <h3 class="text-3xl font-bold mb-8 relative z-10">Admission Schedule</h3>
+                        
+                        <div class="space-y-6 relative z-10">
+                            <div class="flex items-center justify-between p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition">
+                                <div>
+                                    <p class="text-slate-400 text-xs uppercase tracking-wider">Batch 1</p>
+                                    <p class="font-bold text-lg">Early Bird</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-yellow-400 font-bold">Jan - Mar</p>
+                                    <p class="text-xs text-slate-400">Available</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center justify-between p-4 bg-white/5 rounded-xl border border-white/10 hover:bg-white/10 transition">
+                                <div>
+                                    <p class="text-slate-400 text-xs uppercase tracking-wider">Batch 2</p>
+                                    <p class="font-bold text-lg">Regular</p>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-white font-bold">Apr - Jun</p>
+                                    <p class="text-xs text-slate-400">Coming Soon</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="mt-10 w-full bg-yellow-400 text-slate-900 font-bold py-4 rounded-xl hover:bg-yellow-300 transition shadow-lg transform hover:-translate-y-1">
+                            Secure Your Seat Now
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Section (Fees) -->
+    <section id="fees" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6" data-aos="zoom-in">Educational Investment</h2>
+            <p class="text-slate-600 max-w-2xl mx-auto mb-16 text-lg" data-aos="zoom-in" data-aos-delay="100">
+                Jangan lihat ini sebagai biaya. Lihat ini sebagai <span class="text-slate-900 font-bold underline decoration-yellow-400">modal awal</span> untuk karir global bernilai tinggi.
+            </p>
+
+            <div class="flex flex-col md:flex-row justify-center gap-8 px-4">
+                <!-- Standard Plan -->
+                <div class="bg-white p-10 rounded-3xl shadow-xl border border-slate-100 flex-1 max-w-sm mx-auto hover:border-yellow-400 transition duration-300 relative" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-2xl font-bold text-slate-900">Regular Track</h3>
+                    <p class="text-slate-500 mt-2 mb-6">Professional Certificate</p>
+                    <div class="text-5xl font-extrabold text-slate-900 mb-2 tracking-tight">15<span class="text-2xl text-slate-500">jt</span></div>
+                    <p class="text-sm text-slate-400 mb-8 font-medium uppercase tracking-wide">/ Semester</p>
+                    
+                    <ul class="text-left space-y-4 mb-10 text-slate-600">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-green-500"></i> <span>Full Access to UI Facilities</span></li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-green-500"></i> <span>Industry Certification Exam</span></li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-green-500"></i> <span>Career Development Center</span></li>
+                    </ul>
+                    <a href="#" class="block w-full py-4 border-2 border-slate-900 text-slate-900 font-bold rounded-xl hover:bg-slate-900 hover:text-white transition">Download Prospectus</a>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="bg-slate-900 p-10 rounded-3xl shadow-2xl flex-1 max-w-sm mx-auto relative overflow-hidden transform md:-translate-y-4" data-aos="fade-up" data-aos-delay="400">
+                    <!-- Glow Effect -->
+                    <div class="absolute -top-20 -right-20 w-40 h-40 bg-yellow-400 rounded-full blur-[60px] opacity-20"></div>
+                    
+                    <div class="inline-block bg-yellow-400 text-slate-900 text-xs font-bold px-3 py-1 rounded-full mb-4">BEST VALUE</div>
+                    <h3 class="text-2xl font-bold text-white">Dual Degree</h3>
+                    <p class="text-slate-400 mt-2 mb-6">International Bachelor</p>
+                    <div class="text-4xl font-extrabold text-yellow-400 mb-2">Customized</div>
+                    <p class="text-sm text-slate-500 mb-8 font-medium uppercase tracking-wide">Depends on Partner Univ</p>
+                    
+                    <ul class="text-left space-y-4 mb-10 text-slate-300">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-star text-yellow-400"></i> <span>International Exposure</span></li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-star text-yellow-400"></i> <span>Double Degree/Credentials</span></li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-star text-yellow-400"></i> <span>Global Alumni Network</span></li>
+                    </ul>
+                    <a href="#" class="block w-full py-4 bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 font-bold rounded-xl hover:shadow-[0_0_20px_rgba(250,204,21,0.4)] transition">Consultation Free</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Representative / Contact Section (NEW) -->
+    <section id="contact" class="py-24 bg-slate-900 relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-600 rounded-full mix-blend-screen filter blur-[100px] opacity-20"></div>
+        <div class="absolute top-0 left-0 w-96 h-96 bg-yellow-500 rounded-full mix-blend-screen filter blur-[100px] opacity-20"></div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6" data-aos="fade-up">Have Questions? <span class="text-yellow-400">Let's Connect.</span></h2>
+            <p class="text-slate-300 mb-12 max-w-2xl mx-auto text-lg" data-aos="fade-up" data-aos-delay="100">
+                Kami, perwakilan resmi CCIT FTUI, siap membantu menjawab keraguan Anda seputar kurikulum, pendaftaran, dan kehidupan kampus.
+            </p>
+            
+            <!-- Grid Container for 2 People -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                
+                <!-- Profile Card 1 -->
+                <div class="group bg-slate-800/80 backdrop-blur-xl p-8 rounded-3xl shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-slate-700 hover:border-yellow-400/50 transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative w-32 h-32 mx-auto mb-6">
+                        <div class="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full animate-pulse blur-md opacity-70"></div>
+                        <div class="relative w-32 h-32 bg-slate-200 rounded-full overflow-hidden border-4 border-slate-900 flex items-center justify-center">
+                            <!-- Ganti src di bawah dengan foto kamu -->
+                            <i class="fa-solid fa-user text-4xl text-slate-400"></i>
+                        </div>
+                        <div class="absolute bottom-0 right-0 bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center border-2 border-slate-900">
+                            <i class="fa-brands fa-linkedin-in text-sm"></i>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-white mb-1">[Nama Kamu]</h3>
+                    <p class="text-yellow-400 text-sm mb-8 font-bold tracking-widest uppercase">Representative 1</p>
+                    
+                    <a href="https://linkedin.com/in/username-linkedin-kamu" target="_blank" class="block w-full px-8 py-4 bg-[#0a66c2] hover:bg-[#004182] text-white font-bold rounded-xl transition-all shadow-lg transform hover:-translate-y-1 hover:shadow-[#0a66c2]/40 flex items-center justify-center gap-3">
+                        <i class="fa-brands fa-linkedin text-xl"></i>
+                        Connect
+                    </a>
+                </div>
+
+                <!-- Profile Card 2 -->
+                <div class="group bg-slate-800/80 backdrop-blur-xl p-8 rounded-3xl shadow-[0_0_50px_rgba(0,0,0,0.5)] border border-slate-700 hover:border-yellow-400/50 transition-all duration-500" data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative w-32 h-32 mx-auto mb-6">
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full animate-pulse blur-md opacity-70"></div>
+                        <div class="relative w-32 h-32 bg-slate-200 rounded-full overflow-hidden border-4 border-slate-900 flex items-center justify-center">
+                            <!-- Ganti src di bawah dengan foto rekan kamu -->
+                            <i class="fa-solid fa-user text-4xl text-slate-400"></i>
+                        </div>
+                        <div class="absolute bottom-0 right-0 bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center border-2 border-slate-900">
+                            <i class="fa-brands fa-linkedin-in text-sm"></i>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-white mb-1">[Nama Rekan]</h3>
+                    <p class="text-blue-400 text-sm mb-8 font-bold tracking-widest uppercase">Representative 2</p>
+                    
+                    <a href="https://linkedin.com/in/username-linkedin-rekan" target="_blank" class="block w-full px-8 py-4 bg-[#0a66c2] hover:bg-[#004182] text-white font-bold rounded-xl transition-all shadow-lg transform hover:-translate-y-1 hover:shadow-[#0a66c2]/40 flex items-center justify-center gap-3">
+                        <i class="fa-brands fa-linkedin text-xl"></i>
+                        Connect
+                    </a>
+                </div>
+
+            </div>
+            
+            <p class="mt-12 text-xs text-slate-500">
+                Available for consultation regarding CCIT FTUI Admission
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-white pt-20 pb-10 border-t border-slate-900">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between gap-12 mb-16">
+                <div class="md:w-1/3">
+                    <a href="#" class="text-3xl font-bold flex items-center gap-2 mb-6">
+                        <i class="fa-solid fa-microchip text-yellow-400"></i>
+                        CCIT <span class="text-slate-500">FTUI</span>
+                    </a>
+                    <p class="text-slate-400 leading-relaxed mb-6">
+                        Pusat keunggulan pendidikan teknologi di Universitas Indonesia. Kami mendefinisikan standar baru kompetensi digital untuk Indonesia Emas 2045.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-lg bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-yellow-400 hover:text-slate-900 transition-all"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-lg bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-yellow-400 hover:text-slate-900 transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-lg bg-slate-900 flex items-center justify-center text-slate-400 hover:bg-yellow-400 hover:text-slate-900 transition-all"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="md:w-2/3 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-lg font-bold mb-6 text-white">Admissions</h4>
+                        <ul class="space-y-4 text-slate-400 text-sm">
+                            <li><a href="#" class="hover:text-yellow-400 transition">How to Apply</a></li>
+                            <li><a href="#" class="hover:text-yellow-400 transition">Scholarships</a></li>
+                            <li><a href="#" class="hover:text-yellow-400 transition">Tuition Fees</a></li>
+                            <li><a href="#" class="hover:text-yellow-400 transition">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold mb-6 text-white">Programs</h4>
+                        <ul class="space-y-4 text-slate-400 text-sm">
+                            <li><a href="#" class="hover:text-yellow-400 transition">Professional IT</a></li>
+                            <li><a href="#" class="hover:text-yellow-400 transition">Data Science</a></li>
+                            <li><a href="#" class="hover:text-yellow-400 transition">Digital Creative</a></li>
+                            <li><a href="#" class="hover:text-yellow-400 transition">Network Security</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold mb-6 text-white">Contact</h4>
+                        <ul class="space-y-4 text-slate-400 text-sm">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-map-pin text-yellow-400 mt-1"></i>
+                                <span>Engineering Center, FTUI Campus, Depok 16424.</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-phone text-yellow-400"></i>
+                                <span>+62 21 786 3508</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-600">
+                <p>&copy; 2024 CCIT FTUI. Proudly part of Universitas Indonesia.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-slate-400">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-400">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50,
+            easing: 'ease-out-cubic'
+        });
+
+        var typed = new Typed('#typed-text', {
+            strings: ['Elite Tech Talent', 'Global Innovator', 'Future Leader'],
+            typeSpeed: 60,
+            backSpeed: 40,
+            backDelay: 2500,
+            loop: true,
+            showCursor: true,
+            cursorChar: '|',
+        });
+
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('py-2', 'bg-slate-900/95');
+                navbar.classList.remove('py-4', 'bg-slate-900/0');
+            } else {
+                navbar.classList.add('py-4');
+                navbar.classList.remove('py-2', 'bg-slate-900/95');
+            }
+        });
+    </script>
+</body>
+</html>
