@@ -1,1 +1,3 @@
-# edufair-ccit
+# EDUFAIR CCIT FTUI AT SMAN 3 KARAWANG.
+
+Halo, semuanya! 
